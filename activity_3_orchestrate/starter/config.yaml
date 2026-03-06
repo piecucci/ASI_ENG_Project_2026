@@ -1,0 +1,71 @@
+# ASI Project Configuration
+# Modify these values to run different experiments
+
+dataset:
+  raw_path: "data/raw/iowa_liquor_train.csv"
+  processed_dir: "data/processed"
+  target_column: "total_sales"
+  test_size: 0.2
+  random_state: 42
+
+model:
+  type: "LinearRegression"  # Options: LinearRegression, RandomForestRegressor, GradientBoostingRegressor
+  params: {}  # Model-specific parameters
+
+# ---------------------------------------------------------------------------
+# Experiment Presets
+# ---------------------------------------------------------------------------
+# To try a different experiment, replace the 'model:' section above with one
+# of the blocks below (uncomment and copy).
+#
+# Experiment 1: Linear Regression (baseline)
+# model:
+#   type: "LinearRegression"
+#   params: {}
+#
+# Experiment 2: Random Forest (small)
+# model:
+#   type: "RandomForestRegressor"
+#   params:
+#     n_estimators: 50
+#     max_depth: 10
+#     random_state: 42
+#
+# Experiment 3: Random Forest (large)
+# model:
+#   type: "RandomForestRegressor"
+#   params:
+#     n_estimators: 100
+#     max_depth: 20
+#     random_state: 42
+#
+# Experiment 4: Gradient Boosting (default)
+# model:
+#   type: "GradientBoostingRegressor"
+#   params:
+#     n_estimators: 100
+#     learning_rate: 0.1
+#     max_depth: 5
+#     random_state: 42
+#
+# Experiment 5: Gradient Boosting (tuned)
+# model:
+#   type: "GradientBoostingRegressor"
+#   params:
+#     n_estimators: 200
+#     learning_rate: 0.05
+#     max_depth: 8
+#     random_state: 42
+
+output:
+  model_path: "models/model.pkl"
+  metrics_log: "experiment_log.csv"
+
+validation:
+  min_r2: 0.70
+
+# Drift detection settings (used in Activity 5)
+drift:
+  threshold_r2: 0.80
+  test_data_path: "data/raw/iowa_liquor_drift_test.csv"
+  report_path: "drift_report.csv"
