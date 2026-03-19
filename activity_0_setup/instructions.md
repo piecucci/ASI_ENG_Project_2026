@@ -10,7 +10,16 @@ Read the [Hawkeye Spirits brief](../hawkeye_spirits_brief.md) and the [data dict
 
 ## Purpose
 
-Get your development environment ready **before** Activity 1 is released. This homework is not graded, but completing it now will save you hours of frustration later. Every activity in this course depends on three tools: Python (managed by `uv`), Docker, and Git. If any of these are missing or misconfigured when you start Activity 1, you will spend your lab time debugging installation issues instead of learning MLOps.
+Get your development environment ready **before** Activity 1 is released. This homework is not graded, but completing[12:39 PM, 3/19/2026] Gosia Zuz: „Pharma 2026: Jak wygrać w świecie, w którym pacjent ufa AI, ale kupuje u farmaceuty?”.
+
+Jak marki farmaceutyczne mogą przetrwać, gdy ich główny płatnik (Silver) powoli odchodzi, a nowy klient (Gen Z) uważa aptekę za „sklep dla chorych ludzi”, w którym nie chce przebywać?
+
+Mental Health: Gen Z wydaje o 45% więcej na produkty wspierające sen i redukcję stresu niż pokolenie ich rodziców (Boomersi).
+
+Social Commerce: Ponad 35% młodych pacjentów przyznaje, że kupiło produkt prozdrowotny pod wpływem algorytmu AI lub influencera, zanim w ogóle pomyśleli o wizycie w aptece.
+
+Demedykalizacja: Młodzi odchodzą od leków OTC na rzecz metod naturalnych i biohackingu, dopóki problem nie staje się poważny.
+[12:39 PM, 3/19/2026] Gosia Zuz: chce raporty, dane, opracowania w tym zakresie it now will save you hours of frustration later. Every activity in this course depends on three tools: Python (managed by `uv`), Docker, and Git. If any of these are missing or misconfigured when you start Activity 1, you will spend your lab time debugging installation issues instead of learning MLOps.
 
 Budget 30-60 minutes for this setup. Most of the time goes to Docker, especially on Windows.
 

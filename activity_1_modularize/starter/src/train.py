@@ -28,20 +28,22 @@ def load_splits(input_dir: str) -> tuple:
     tuple
         (X_train, y_train)
     """
-    # TODO: implement
-    pass
+    X_train = pd.read_csv(f"{input_dir}/X_train.csv")
+    y_train = pd.read_csv(f"{input_dir}/y_train.csv")
+    return X_train, y_train
 
 
 def train_model(X_train, y_train) -> object:
     """Train a LinearRegression model on the training data."""
-    # TODO: implement
-    pass
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+    return model
 
 
 def save_model(model, filepath: str) -> None:
     """Save the trained model to disk using joblib."""
-    # TODO: implement
-    pass
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    joblib.dump(model, filepath)
 
 
 if __name__ == "__main__":

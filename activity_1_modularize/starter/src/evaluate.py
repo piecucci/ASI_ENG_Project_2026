@@ -27,20 +27,23 @@ def load_model(filepath: str) -> object:
     object
         The loaded model.
     """
-    # TODO: implement
-    pass
+    return joblib.load(filepath)
 
 
 def load_test_data(input_dir: str) -> tuple:
     """Load test data splits from CSV files."""
-    # TODO: implement
-    pass
+    X_test = pd.read_csv(f"{input_dir}/X_test.csv")
+    y_test = pd.read_csv(f"{input_dir}/y_test.csv")
+    return X_test, y_test
 
 
 def evaluate_model(model, X_test, y_test) -> dict:
     """Evaluate the model on test data and return metrics."""
-    # TODO: implement
-    pass
+    y_pred = model.predict(X_test)
+    rmse = mean_squared_error(y_test, y_pred, squared=False)
+    r2 = r2_score(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+    return {"rmse": rmse, "r2": r2, "mae": mae}
 
 
 if __name__ == "__main__":
