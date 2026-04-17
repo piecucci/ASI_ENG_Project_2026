@@ -1,11 +1,11 @@
-# TODO: Choose a base image (e.g., python:3.11-slim)
+FROM python:3.11-slim
 
-# TODO: Set the working directory inside the container
+WORKDIR /app
 
-# TODO: Copy the dependency file first (for layer caching)
+COPY pyproject.toml uv.lock ./
 
-# TODO: Install uv and sync dependencies
+RUN pip install --no-cache-dir uv && uv sync --frozen
 
-# TODO: Copy the rest of the project files
+COPY . .
 
-# TODO: Set the default command to run the full pipeline
+CMD uv run python src/prepare.py && uv run python src/train.py && uv run python src/evaluate.py && uv run python src/validate.py
