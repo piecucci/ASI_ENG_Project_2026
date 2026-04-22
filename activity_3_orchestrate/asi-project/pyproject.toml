@@ -1,0 +1,13 @@
+[project]
+name = "asi-project"
+version = "0.1.0"
+description = "ASI Project - ML Pipeline Starter Kit"
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn>=1.4,<1.6",
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "joblib>=1.3",
+    "pyyaml>=6.0.3",
+    "pytest>=9.0.3",
+]
