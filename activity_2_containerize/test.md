@@ -57,11 +57,11 @@ The Dockerfile's CMD chains 4 scripts: prepare → train → evaluate → valida
 - [ ] CMD chains allow parallel execution of all 4 scripts
 
 ## Question 9
-A Dockerfile installs dependencies with `uv sync`. Another approach uses `pip install -r requirements.txt`. Both achieve the same installed packages. What advantage does uv provide inside Docker specifically?
-- [ ] `uv` produces smaller Docker images than `pip`
-- [ ] `uv` resolves and installs packages significantly faster than `pip`, which directly reduces Docker build time — especially important when the dependency cache is invalidated
-- [ ] `pip` cannot install packages inside Docker containers
-- [ ] `uv` automatically creates a virtual environment; `pip` does not
+A Docker image is 900MB (using `python:3.11`). Rebuilding with `python:3.11-slim` produces 150MB with identical pipeline results. When would the 900MB image be necessary?
+- [ ] When the pipeline needs to compile C extensions during the Docker build (e.g., packages requiring `gcc`), which slim images don't include
+- [ ] When deploying to production — larger images are more reliable
+- [ ] When the model needs more memory at runtime — image size determines available RAM
+- [ ] Never — always use the smallest image
 
 ## Question 10
 An IT manager says: "I want a one-command pipeline that either fully succeeds or fully fails — no partial states." How does the Dockerfile's `CMD` chain with `&&` satisfy this requirement?
@@ -69,3 +69,5 @@ An IT manager says: "I want a one-command pipeline that either fully succeeds or
 - [ ] It doesn't — partial states are still possible if the machine loses power mid-execution
 - [ ] Docker automatically rolls back partial executions to a clean state
 - [ ] The `CMD` runs all scripts in a transaction like a database
+
+
